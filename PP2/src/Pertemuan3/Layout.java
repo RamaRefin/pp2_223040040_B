@@ -1,4 +1,4 @@
-package Materi2;
+package Pertemuan3;
 
 import java.awt.BorderLayout;
 import java.awt.event.ActionEvent;

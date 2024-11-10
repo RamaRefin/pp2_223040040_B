@@ -1,4 +1,4 @@
-package Materi2.Tugas;
+package Pertemuan3.Tugas;
 
 import java.awt.Font;
 import java.awt.GridBagConstraints;
