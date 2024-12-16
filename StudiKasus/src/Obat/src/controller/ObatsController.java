@@ -105,6 +105,7 @@ public class ObatsController {
         e.setStok(Integer.parseInt(view.getTfStok().getText()));
         mapper.insertObat(e);
         loadObats();
+        JOptionPane.showMessageDialog(view, "Obat berhasil ditambahkan!", "Success", JOptionPane.INFORMATION_MESSAGE);
     }
 
     private void updateObat() {
@@ -122,8 +123,18 @@ public class ObatsController {
             JOptionPane.showMessageDialog(view, "Pilih baris yang ingin di hapus");
             return;
         }
+        
+    int confirm = JOptionPane.showConfirmDialog(view, 
+            "Apakah yakin ingin menghapus obat ini?", 
+            "Konfirmasi Hapus", 
+            JOptionPane.YES_NO_OPTION, 
+            JOptionPane.QUESTION_MESSAGE);
+
+    if (confirm == JOptionPane.YES_OPTION) {
         int id = (int) view.getTable().getValueAt(selectedRow, 0);
         mapper.deleteObat(id);
         loadObats();
+        JOptionPane.showMessageDialog(view, "Obat berhasil dihapus");
+        }
     }
 }
